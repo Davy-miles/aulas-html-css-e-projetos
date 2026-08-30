@@ -234,30 +234,78 @@
                     <button class="code-tab">script.js</button>
                 </div>
                 <div class="code-box">
-<pre><span class="token-comment">&lt;!-- index.html --&gt;</span>
-<span class="token-keyword">&lt;div</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note1').currentTime = 0; document.getElementById('note1').play()"</span><span class="token-keyword">&gt;</span>
-    <span class="token-keyword">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note1"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note1.wav"</span><span class="token-keyword">&gt;&lt;/audio&gt;</span>
-<span class="token-keyword">&lt;/div&gt;</span>
+<pre><code><span class="token-comment">&lt;!-- index.html --&gt;</span>
+<span class="token-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="token-tag">&lt;html lang="pt-br"&gt;</span>
+<span class="token-tag">&lt;head&gt;</span>
+    <span class="token-tag">&lt;meta</span> <span class="token-attr">charset</span>=<span class="token-string">"UTF-8"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;meta</span> <span class="token-attr">name</span>=<span class="token-string">"viewport"</span> <span class="token-attr">content</span>=<span class="token-string">"width=device-width, initial-scale=1.0"</span><span class="token-tag">&gt;</span>
+    <span class="token-tag">&lt;title&gt;</span>Xilofone<span class="token-tag">&lt;/title&gt;</span>
+<span class="token-tag">&lt;/head&gt;</span>
+<span class="token-tag">&lt;body</span> <span class="token-attr">style</span>=<span class="token-string">"margin: 0;display: flex;"</span><span class="token-tag">&gt;</span>
+    <span class="token-comment">&lt;!--</span>
+        O body é o corpo da página.
+        O estilo inline abaixo diz:
+        - margin: 0; -> remove a margem padrão do navegador
+        - display: flex; -> deixa os elementos em linha, lado a lado
+    <span class="token-comment">--&gt;</span>
 
-<span class="token-comment">// script.js</span>
-<span class="token-keyword">document</span>.addEventListener(<span class="token-string">'keydown'</span>, <span class="token-keyword">function</span>(event) {
-    <span class="token-keyword">const</span> tecla = event.key.toLowerCase();
-    <span class="token-keyword">const</span> notas = {
-        'a': 'note1',
-        's': 'note2',
-        'd': 'note3',
-        'f': 'note4',
-        'g': 'note5',
-        'h': 'note6',
-        'j': 'note7'
-    };
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">" width: 100vh; height: 100vh; background-color: #EF767A; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note1').currentTime = 0; document.getElementById('note1').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note1"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note1.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
 
-    <span class="token-keyword">if</span> (notas[tecla]) {
-        <span class="token-keyword">const</span> audio = document.getElementById(notas[tecla]);
-        audio.currentTime = 0;
-        audio.play();
-    }
-});</pre>
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #456990; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note2').currentTime = 0; document.getElementById('note2').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note2"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note2.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #49BEAA; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note3').currentTime = 0; document.getElementById('note3').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note3"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note3.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #20cc37; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note4').currentTime = 0; document.getElementById('note4').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note4"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note4.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #EEB868; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note5').currentTime = 0; document.getElementById('note5').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note5"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note5.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #d156f0; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note6').currentTime = 0; document.getElementById('note6').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note6"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note6.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-tag">&lt;div</span> <span class="token-attr">style</span>=<span class="token-string">"width: 100vh; height: 100vh; background-color: #2f0ad6; display: block;"</span> <span class="token-attr">onclick</span>=<span class="token-string">"document.getElementById('note7').currentTime = 0; document.getElementById('note7').play()"</span><span class="token-tag">&gt;</span>
+        <span class="token-tag">&lt;audio</span> <span class="token-attr">id</span>=<span class="token-string">"note7"</span> <span class="token-attr">src</span>=<span class="token-string">"sounds/note7.wav"</span><span class="token-tag">&gt;&lt;/audio&gt;</span>
+    <span class="token-tag">&lt;/div&gt;</span>
+
+    <span class="token-comment">&lt;!--</span>
+        Aqui começa o JavaScript.
+        A função document.addEventListener('keydown', ...) escuta o teclado.
+    <span class="token-comment">--&gt;</span>
+    <span class="token-tag">&lt;script&gt;</span>
+        <span class="token-keyword">document</span>.addEventListener(<span class="token-string">'keydown'</span>, <span class="token-keyword">function</span>(event) {
+            <span class="token-keyword">const</span> tecla = event.key.toLowerCase();
+
+            <span class="token-keyword">const</span> notas = {
+                <span class="token-string">'a'</span>: <span class="token-string">'note1'</span>,
+                <span class="token-string">'s'</span>: <span class="token-string">'note2'</span>,
+                <span class="token-string">'d'</span>: <span class="token-string">'note3'</span>,
+                <span class="token-string">'f'</span>: <span class="token-string">'note4'</span>,
+                <span class="token-string">'g'</span>: <span class="token-string">'note5'</span>,
+                <span class="token-string">'h'</span>: <span class="token-string">'note6'</span>,
+                <span class="token-string">'j'</span>: <span class="token-string">'note7'</span>
+            };
+
+            <span class="token-keyword">if</span> (notas[tecla]) {
+                <span class="token-keyword">const</span> audio = document.getElementById(notas[tecla]);
+                audio.currentTime = 0;
+                audio.play();
+            }
+        });
+    <span class="token-tag">&lt;/script&gt;</span>
+<span class="token-tag">&lt;/body&gt;</span>
+<span class="token-tag">&lt;/html&gt;</span>
+</code></pre>
                 </div>
             </div>
         </div>

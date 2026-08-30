@@ -1,17 +1,21 @@
 /*
-    Arquivo de estilo principal do projeto.
-    Este CSS organiza a página inicial do curso de HTML e CSS.
-    O tema foi pensado em tons cybertech: roxo, preto e branco.
+    Arquivo principal de estilo do portfólio de aulas.
+    Ele organiza todo o visual da página com um tema cyber-tech em preto, roxo e branco.
 
     Estrutura do arquivo:
-    1. variáveis de cor
-    2. reset geral
-    3. layout do cabeçalho/hero
-    4. cards de aulas e projetos
-    5. mini visuais ilustrativos
-    6. glossário de elementos
-    7. timeline de slides
-    8. responsividade
+    1. variáveis de cor e sombras
+    2. reset do navegador
+    3. fundo visual e layout geral
+    4. hero/header com apresentação do curso
+    5. cards das aulas e projetos
+    6. elementos ilustrativos e mini demos
+    7. glossário e timeline de slides
+    8. interatividade, hover e responsividade
+
+    Comentário didático:
+    - :root guarda as cores em um único lugar para facilitar manutenção.
+    - As variáveis ajudam o design a ficar consistente em toda a página.
+    - A ideia é manter a aparência limpa, moderna e voltada para desenvolvimento web.
 */
 
 :root {
@@ -46,6 +50,20 @@ body {
         linear-gradient(135deg, var(--bg), var(--bg-2));
     color: var(--text);
     line-height: 1.7;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
 }
 
 a {
@@ -62,6 +80,19 @@ a {
     padding: 30px 0 40px;
     background: radial-gradient(circle at top left, rgba(168,85,247,0.15), transparent 35%),
                 radial-gradient(circle at bottom right, rgba(255,255,255,0.06), transparent 28%);
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 10% 8% auto auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.32), transparent 68%);
+    filter: blur(18px);
+    pointer-events: none;
 }
 
 .topbar {
@@ -165,6 +196,25 @@ a {
     padding: 22px;
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 4px;
+}
+
+.hero-badges span {
+    background: rgba(168,85,247,0.12);
+    border: 1px solid rgba(216,180,254,0.25);
+    color: var(--secondary);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    font-weight: 700;
 }
 
 .mini-stat {
@@ -212,6 +262,16 @@ a {
     border-radius: 18px;
     padding: 22px;
     box-shadow: var(--shadow);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.card:hover,
+.glossary-item:hover,
+.timeline-item:hover,
+.demo-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(216,180,254,0.5);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.46), 0 0 24px rgba(168,85,247,0.18);
 }
 
 .card-visual {
@@ -424,6 +484,13 @@ a {
     border: 1px solid rgba(216,180,254,0.25);
     color: var(--secondary);
     font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(168,85,247,0.25);
+    background: rgba(168,85,247,0.18);
 }
 
 .project-link.secondary {
@@ -443,6 +510,7 @@ a {
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 18px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .glossary-item strong {
@@ -467,6 +535,7 @@ a {
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 16px 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .timeline-item span {
@@ -497,6 +566,7 @@ a {
     border-radius: 22px;
     padding: 18px;
     box-shadow: var(--shadow);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .demo-topbar {
@@ -577,6 +647,26 @@ footer {
     color: var(--muted);
     text-align: center;
     border-top: 1px solid var(--line);
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 @media (max-width: 760px) {

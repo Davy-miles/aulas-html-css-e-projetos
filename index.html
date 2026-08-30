@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho principal da página: aqui começa a apresentação do curso e o guia visual do conteúdo -->
     <header class="hero" id="inicio">
         <div class="container">
             <div class="topbar">
@@ -27,13 +28,22 @@
                         com explicações simples sobre o que cada parte do código faz e como cada exercício ajuda a entender
                         a estrutura da web.
                     </p>
+
+                    <!-- Badges visuais ajudam a mostrar rapidamente quais linguagens e conceitos estão sendo praticados -->
+                    <div class="hero-badges" aria-label="Tecnologias do curso">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Flexbox</span>
+                        <span>JavaScript</span>
+                    </div>
+
                     <div class="cta-row">
                         <a class="btn btn-primary" href="#aulas">Ver aulas</a>
                         <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
                     </div>
                 </div>
 
-                <div class="hero-card">
+                <div class="hero-card reveal">
                     <div class="mini-stat">
                         <div>
                             <small>Atividades</small>
@@ -70,6 +80,7 @@
     </header>
 
     <main>
+        <!-- Seção de aulas: reúne as atividades principais e explica o objetivo de cada exercício no curso -->
         <section class="section" id="aulas">
             <div class="container">
                 <h2 class="section-title">Aulas e atividades</h2>
@@ -79,7 +90,7 @@
                 </p>
 
                 <div class="grid">
-                    <article class="card">
+                    <article class="card reveal">
                         <div class="card-visual visual-html">
                             <div class="code-window">
                                 <span></span>
@@ -109,7 +120,7 @@
                         </div>
                     </article>
 
-                    <article class="card">
+                    <article class="card reveal">
                         <div class="card-visual visual-audio">
                             <div class="player-panel">
                                 <span class="btn-circle"></span>
@@ -144,6 +155,7 @@
             </div>
         </section>
 
+        <!-- Seção de projetos: mostra como os conceitos aprendidos viram aplicações visuais e interativas -->
         <section class="section" id="projetos">
             <div class="container">
                 <h2 class="section-title">Projetos desenvolvidos</h2>
@@ -153,7 +165,7 @@
                 </p>
 
                 <div class="grid">
-                    <article class="card">
+                    <article class="card reveal">
                         <div class="card-visual visual-gallery">
                             <div class="image-strip">
                                 <span class="img-box img-one"></span>
@@ -176,7 +188,7 @@
                         <a class="project-link" href="aula%20_1/index.html" target="_blank">Ver exemplo</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card reveal">
                         <div class="card-visual visual-xylophone">
                             <div class="xylophone-bars">
                                 <span></span>
@@ -205,6 +217,7 @@
             </div>
         </section>
 
+        <!-- Glossário didático: explica os elementos mais usados em HTML e CSS com linguagem simples -->
         <section class="section" id="tags">
             <div class="container">
                 <h2 class="section-title">O que cada coisa faz</h2>
@@ -253,6 +266,7 @@
             </div>
         </section>
 
+        <!-- Seção de slides: organiza a linha do tempo de estudo em blocos claros e fáceis de acompanhar -->
         <section class="section" id="slides">
             <div class="container">
                 <h2 class="section-title">Slides e conteúdos da aula</h2>
@@ -304,6 +318,7 @@
             </div>
         </section>
 
+        <!-- Seção interativa: o aluno consegue visualizar o programa rodando e olhar o código em paralelo -->
         <section class="section" id="interativo">
             <div class="container">
                 <h2 class="section-title">Preview + Código</h2>
@@ -403,6 +418,7 @@
     </footer>
 
     <script>
+        // Cada botão alterna entre o preview e o código do projeto, deixando a navegação mais interativa.
         document.querySelectorAll('.tab-btn').forEach(function (button) {
             button.addEventListener('click', function () {
                 const demo = this.dataset.demo;
@@ -417,6 +433,19 @@
                     item.classList.toggle('active', item.id === demo + '-' + panel);
                 });
             });
+        });
+
+        // Animção de entrada suave aos elementos quando aparecem na tela.
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach((element) => {
+            observer.observe(element);
         });
     </script>
 </body>
