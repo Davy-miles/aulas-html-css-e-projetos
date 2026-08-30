@@ -297,10 +297,121 @@
                 </div>
             </div>
         </section>
+
+        <section class="section" id="interativo">
+            <div class="container">
+                <h2 class="section-title">Preview + Código</h2>
+                <p class="section-sub">
+                    Cada aula e projeto pode ser visualizado em tempo real e também conferido em código, para entender exatamente como cada parte funciona.
+                </p>
+
+                <div class="demo-grid">
+                    <article class="demo-card">
+                        <div class="demo-topbar">
+                            <span class="tag">Aula 1</span>
+                            <strong>Galeria + Flexbox</strong>
+                        </div>
+
+                        <div class="demo-controls">
+                            <button class="tab-btn active" data-demo="aula-1" data-panel="preview">Preview</button>
+                            <button class="tab-btn" data-demo="aula-1" data-panel="code">Código</button>
+                        </div>
+
+                        <div class="demo-panel active" id="aula-1-preview">
+                            <iframe src="aula%20_1/index.html" title="Preview da Aula 1"></iframe>
+                        </div>
+
+                        <div class="demo-panel" id="aula-1-code">
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;title&gt;fluxbox&lt;/title&gt;
+&lt;/head&gt;
+&lt;body style="margin: 0; padding: 0; overflow: hidden; display: flex; flex-direction: row; justify-content: center;"&gt;
+    &lt;div style="width: 45vh; height: 100vh; background-color: #EF767A; display: block;"&gt;&lt;/div&gt;
+    &lt;div style="width: 45vh; height: 100vh; background-color: #456990; display: block;"&gt;
+        &lt;img src="Goku_29.webp" width="100%" height="100%"&gt;
+    &lt;/div&gt;
+    &lt;div style="width: 45vh; height: 100vh; background-color: #49BEAA; display: block;"&gt;
+        &lt;img src="add-john-xina-and-the-wok-as-generals-to-the-xinet-v0-8naylxusv5d81.webp" width="100%" height="100%"&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+
+                        <div class="demo-actions">
+                            <a class="project-link" href="aula%20_1/index.html" target="_blank">Abrir em nova aba</a>
+                        </div>
+                    </article>
+
+                    <article class="demo-card">
+                        <div class="demo-topbar">
+                            <span class="tag">Aula 2</span>
+                            <strong>Xilofone interativo</strong>
+                        </div>
+
+                        <div class="demo-controls">
+                            <button class="tab-btn active" data-demo="aula-2" data-panel="preview">Preview</button>
+                            <button class="tab-btn" data-demo="aula-2" data-panel="code">Código</button>
+                        </div>
+
+                        <div class="demo-panel active" id="aula-2-preview">
+                            <iframe src="xilofone/index.html" title="Preview do Xilofone"></iframe>
+                        </div>
+
+                        <div class="demo-panel" id="aula-2-code">
+                            <pre><code>document.addEventListener('keydown', function(event) {
+    const tecla = event.key.toLowerCase();
+    const notas = {
+        'a': 'note1',
+        's': 'note2',
+        'd': 'note3',
+        'f': 'note4',
+        'g': 'note5',
+        'h': 'note6',
+        'j': 'note7'
+    };
+
+    if (notas[tecla]) {
+        const audio = document.getElementById(notas[tecla]);
+        audio.currentTime = 0;
+        audio.play();
+    }
+});</code></pre>
+                        </div>
+
+                        <div class="demo-actions">
+                            <a class="project-link" href="xilofone/index.html" target="_blank">Abrir em nova aba</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         Projeto de estudo de HTML, CSS e JavaScript — EEEP Doutor José Iran Costa
     </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const demo = this.dataset.demo;
+                const panel = this.dataset.panel;
+                const card = this.closest('.demo-card');
+
+                card.querySelectorAll('.tab-btn').forEach(function (btn) {
+                    btn.classList.toggle('active', btn === button);
+                });
+
+                card.querySelectorAll('.demo-panel').forEach(function (item) {
+                    item.classList.toggle('active', item.id === demo + '-' + panel);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
