@@ -409,15 +409,27 @@ a {
     margin-top: 6px;
 }
 
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
 .project-link {
     display: inline-block;
-    margin-top: 18px;
     padding: 10px 14px;
     border-radius: 10px;
     background: rgba(168,85,247,0.12);
     border: 1px solid rgba(216,180,254,0.25);
     color: var(--secondary);
     font-weight: 700;
+}
+
+.project-link.secondary {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.1);
+    color: var(--text);
 }
 
 .glossary {
