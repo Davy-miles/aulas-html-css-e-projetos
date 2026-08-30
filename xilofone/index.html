@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--
+        O head continua sendo a parte de configuração da página.
+        Aqui estão as informações do documento, como a codificação e o título da aba.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xilofone</title>
+</head>
+<body style="margin: 0;display: flex;">
+    <!--
+        O body é o corpo da página.
+        O estilo inline abaixo diz:
+        - margin: 0; -> remove a margem padrão do navegador
+        - display: flex; -> deixa os elementos em linha, lado a lado
+
+        Isso funciona como um container principal usando Flexbox.
+    -->
+
+    <!--
+        Cada div representa uma "tecla" do xilofone.
+        A div é um bloco genérico, muito usada para criar layouts.
+        Aqui ela ocupa a tela inteira em altura e largura, e muda de cor.
+
+        O atributo onclick significa:
+        "quando clicar nessa div, execute o código JavaScript".
+
+        document.getElementById('note1') -> procura o elemento HTML com id="note1"
+        currentTime = 0 -> reinicia o áudio do começo
+        play() -> toca o som
+    -->
+    <div style=" width: 100vh; height: 100vh; background-color: #EF767A; display: block;" onclick="document.getElementById('note1').currentTime = 0; document.getElementById('note1').play()">
+        <!--
+            A tag audio serve para adicionar som na página.
+            Cada elemento audio tem um id único.
+            O atributo src aponta para o arquivo de som.
+        -->
+        <audio id="note1" src="sounds/note1.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #456990; display: block;" onclick="document.getElementById('note2').currentTime = 0; document.getElementById('note2').play()">
+        <audio id="note2" src="sounds/note2.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #49BEAA; display: block;" onclick="document.getElementById('note3').currentTime = 0; document.getElementById('note3').play()">
+        <audio id="note3" src="sounds/note3.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #20cc37; display: block;" onclick="document.getElementById('note4').currentTime = 0; document.getElementById('note4').play()">
+        <audio id="note4" src="sounds/note4.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #EEB868; display: block;" onclick="document.getElementById('note5').currentTime = 0; document.getElementById('note5').play()">
+        <audio id="note5" src="sounds/note5.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #d156f0; display: block;" onclick="document.getElementById('note6').currentTime = 0; document.getElementById('note6').play()">
+        <audio id="note6" src="sounds/note6.wav"></audio>
+    </div>
+
+    <div style="width: 100vh; height: 100vh; background-color: #2f0ad6; display: block;" onclick="document.getElementById('note7').currentTime = 0; document.getElementById('note7').play()">
+        <audio id="note7" src="sounds/note7.wav"></audio>
+    </div>
+
+    <!--
+        Aqui começa o JavaScript.
+        A função document.addEventListener('keydown', ...) escuta o teclado.
+
+        Quando uma tecla for pressionada, o código executa:
+        1. pega a tecla pressionada (event.key)
+        2. coloca em minúsculo
+        3. verifica no objeto 'notas' se existe essa letra
+        4. se existir, busca o áudio correspondente
+        5. coloca o tempo do áudio em 0 para reiniciar
+        6. toca o som com play()
+
+        Exemplo:
+        tecla 'a' -> note1
+        tecla 's' -> note2
+        tecla 'd' -> note3
+        ...
+    -->
+    <script>
+        document.addEventListener('keydown', function(event) {
+            const tecla = event.key.toLowerCase();
+
+            const notas = {
+                'a': 'note1',
+                's': 'note2',
+                'd': 'note3',
+                'f': 'note4',
+                'g': 'note5',
+                'h': 'note6',
+                'j': 'note7'
+            };
+
+            if (notas[tecla]) {
+                const audio = document.getElementById(notas[tecla]);
+                audio.currentTime = 0;
+                audio.play();
+            }
+        });
+    </script>
+
+</body>
+</html>
+

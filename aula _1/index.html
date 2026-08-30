@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--
+        A tag head guarda informações do documento, como:
+        - charset: codificação de caracteres
+        - viewport: ajusta a página para celular
+        - link: conecta o arquivo CSS
+        - title: nome da aba do navegador
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>fluxbox</title>
+</head>
+<body margin="0" style="margin: 0; padding: 0; overflow: hidden; display: flex; flex-direction: row; justify-content: center; ">
+    <!--
+        FLEXBOX EXPLICAÇÃO:
+        - display: flex; -> ativa o flexbox
+        - flex-direction: row; -> coloca os elementos em linha, lado a lado
+        - justify-content: center; -> centraliza os elementos na horizontal
+        - overflow: hidden; -> esconde qualquer conteúdo que ultrapasse o espaço
+
+        O body está funcionando como um "container" principal.
+        Tudo que estiver dentro dele será organizado pelo flexbox.
+    -->
+
+    <!--
+        A tag <div> é como uma caixa genérica.
+        Ela serve para agrupar elementos e aplicar estilos.
+        Aqui cada div é uma coluna com largura, altura e cor de fundo.
+    -->
+    <div style="width: 45vh; height: 100vh; background-color: #EF767A; display: block;"></div>
+
+    <!--
+        Quando uma div contém uma imagem, ela funciona como container.
+        A tag <img> mostra uma imagem na página.
+        src="..." -> caminho da imagem
+        width="100%" height="100%" -> faz a imagem preencher todo espaço da div
+    -->
+    <div style="width: 45vh; height: 100vh; background-color: #456990; display: block;">
+        <img src="Goku_29.webp" width="100%" height="100%">
+    </div>
+
+    <div style="width: 45vh; height: 100vh; background-color: #49BEAA; display: block;">
+        <img src="add-john-xina-and-the-wok-as-generals-to-the-xinet-v0-8naylxusv5d81.webp" width="100%" height="100%">
+    </div>
+
+    <div style="width: 45vh; height: 100vh; background-color: #49DCB1; display: block;">
+        <img src="batman.gif" width="100%" height="100%">
+    </div>
+
+    <div style="width: 45vh; height: 100vh; background-color: #EEB868; display: block;">
+        <img src="EoFkS7EWEAQLBzD.jpg" width="100%" height="100%">
+    </div>
+
+    <!--
+        EXEMPLO DE TAG AUDIO:
+        A tag <audio> serve para reproduzir arquivos de som.
+        Alguns atributos importantes:
+        - controls -> mostra os controles do player
+        - autoplay -> toca automaticamente
+        - loop -> repete a música
+        - src -> caminho do arquivo de áudio
+
+        Exemplo:
+
+        <audio controls>
+            <source src="musica.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+    -->
+</body>
+</html>

@@ -2,15 +2,305 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS - EEEP Doutor José Iran Costa</title>
     <link rel="stylesheet" href="style.css">
-    <title>fluxbox</title>
 </head>
-<body margin="0" style="margin: 0; padding: 0; overflow: hidden; display: flex; flex-direction: row; justify-content: center; ">
-    <div style="width: 45vh;height: 100vh; background-color: #EF767A; display: block;"><img src="500px-Minecraft-creeper-face.svg.webp" width="100%" height="100%"></div>
-    <div style="width: 45vh;height: 100vh; background-color: #456990; display: block;"><img src="Goku_29.webp" width="100%" height="100%"></div>
-    <div style="width: 45vh;height: 100vh; background-color: #49BEAA; display: block;"><img src="add-john-xina-and-the-wok-as-generals-to-the-xinet-v0-8naylxusv5d81.webp" width="100%" height="100%"></div>
-    <div style="width: 45vh;height: 100vh; background-color: #49DCB1; display: block;"><img src="batman.gif" width="100%" height="100%"></div>
-    <div style="width: 45vh;height: 100vh; background-color: #EEB868; display: block;"><img src="EoFkS7EWEAQLBzD.jpg" width="100%" height="100%"></div>
+<body>
+    <header class="hero" id="inicio">
+        <div class="container">
+            <div class="topbar">
+                <div class="brand">EEEP Doutor José Iran Costa</div>
+                <nav class="nav" aria-label="Menu principal">
+                    <a href="#aulas">Aulas</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#slides">Slides</a>
+                    <a href="#tags">Elementos</a>
+                </nav>
+            </div>
+
+            <div class="hero-content">
+                <div>
+                    <h1>HTML e CSS <span class="highlight">em prática</span></h1>
+                    <p>
+                        Esta página reúne as aulas e projetos criados durante o aprendizado de HTML, CSS e JavaScript,
+                        com explicações simples sobre o que cada parte do código faz e como cada exercício ajuda a entender
+                        a estrutura da web.
+                    </p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="#aulas">Ver aulas</a>
+                        <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="mini-stat">
+                        <div>
+                            <small>Atividades</small>
+                            <strong>02</strong>
+                        </div>
+                        <div>
+                            <small>Projeto principal</small>
+                            <strong>Xilofone</strong>
+                        </div>
+                    </div>
+                    <div class="mini-stat">
+                        <div>
+                            <small>Conteúdo</small>
+                            <strong>HTML</strong>
+                        </div>
+                        <div>
+                            <small>Estilo</small>
+                            <strong>CSS</strong>
+                        </div>
+                    </div>
+                    <div class="mini-stat">
+                        <div>
+                            <small>Interação</small>
+                            <strong>JS</strong>
+                        </div>
+                        <div>
+                            <small>Objetivo</small>
+                            <strong>Prática</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="aulas">
+            <div class="container">
+                <h2 class="section-title">Aulas e atividades</h2>
+                <p class="section-sub">
+                    As aulas de HTML e CSS da EEEP Doutor José Iran Costa têm como foco o aprendizado prático,
+                    mostrando como montar páginas web com estrutura, design, organização visual e interação.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-visual visual-html">
+                            <div class="code-window">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="layout-demo layout-demo-row">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <span class="tag">Aula 1</span>
+                        <h3>Estrutura básica e Flexbox</h3>
+                        <p>
+                            A primeira aula introduz a base da linguagem HTML e os primeiros conceitos de layout com CSS,
+                            incluindo blocos, imagens, espaçamento e posição dos elementos na página.
+                        </p>
+                        <ul>
+                            <li>HTML: estrutura do documento</li>
+                            <li>CSS: estilização e layout</li>
+                            <li>Flexbox: organização em linha</li>
+                        </ul>
+                        <a class="project-link" href="aula%20_1/index.html" target="_blank">Abrir projeto</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-visual visual-audio">
+                            <div class="player-panel">
+                                <span class="btn-circle"></span>
+                                <span class="bar bar-1"></span>
+                                <span class="bar bar-2"></span>
+                                <span class="bar bar-3"></span>
+                            </div>
+                            <div class="keypad">
+                                <span>A</span>
+                                <span>S</span>
+                                <span>D</span>
+                                <span>F</span>
+                            </div>
+                        </div>
+                        <span class="tag">Aula 2</span>
+                        <h3>Áudio, eventos e interação</h3>
+                        <p>
+                            Nesta etapa o aluno aprende a usar elementos multimídia e JavaScript para tornar a página interativa,
+                            executando sons ao clicar ou ao apertar teclas do teclado.
+                        </p>
+                        <ul>
+                            <li>Tag audio</li>
+                            <li>Eventos do mouse</li>
+                            <li>Eventos do teclado</li>
+                        </ul>
+                        <a class="project-link" href="xilofone/index.html" target="_blank">Abrir projeto</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projetos">
+            <div class="container">
+                <h2 class="section-title">Projetos desenvolvidos</h2>
+                <p class="section-sub">
+                    Cada projeto é uma aplicação prática de conceitos aprendidos em aula. Eles mostram como a teoria vira
+                    página visual, interativa e funcional.
+                </p>
+
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-visual visual-gallery">
+                            <div class="image-strip">
+                                <span class="img-box img-one"></span>
+                                <span class="img-box img-two"></span>
+                                <span class="img-box img-three"></span>
+                                <span class="img-box img-four"></span>
+                            </div>
+                        </div>
+                        <span class="tag">Projeto 1</span>
+                        <h3>Galeria de imagens em linha</h3>
+                        <p>
+                            Esse projeto usa várias divs com cor de fundo e imagens dentro delas. O objetivo é entender melhor
+                            os conceitos de container, tamanhos, espaçamento e Flexbox.
+                        </p>
+                        <ul>
+                            <li>Blocos com largura e altura fixa</li>
+                            <li>Imagens preenchendo o espaço</li>
+                            <li>Layout horizontal com flexbox</li>
+                        </ul>
+                        <a class="project-link" href="aula%20_1/index.html" target="_blank">Ver exemplo</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-visual visual-xylophone">
+                            <div class="xylophone-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <span class="tag">Projeto 2</span>
+                        <h3>Xilofone interativo</h3>
+                        <p>
+                            O xilofone é um projeto de música digital em que cada bloco representa uma nota. Ao clicar ou apertar
+                            uma tecla, o navegador reproduz um som relacionado àquela nota.
+                        </p>
+                        <ul>
+                            <li>Tag audio para reprodução de som</li>
+                            <li>onclick para click do mouse</li>
+                            <li>keydown para interação com teclado</li>
+                        </ul>
+                        <a class="project-link" href="xilofone/index.html" target="_blank">Ouvir o projeto</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="tags">
+            <div class="container">
+                <h2 class="section-title">O que cada coisa faz</h2>
+                <p class="section-sub">
+                    Nesse início do estudo web, alguns elementos aparecem com frequência e são essenciais para construir qualquer página.
+                </p>
+
+                <div class="glossary">
+                    <div class="glossary-item">
+                        <strong>&lt;html&gt;</strong>
+                        Define a estrutura principal do documento HTML.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>&lt;head&gt;</strong>
+                        Guarda configurações da página, como título, charset e arquivos externos.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>&lt;body&gt;</strong>
+                        Contém o conteúdo visível da página: textos, imagens, botões e blocos.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>&lt;div&gt;</strong>
+                        Cria blocos ou containers para organizar os elementos da página.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>&lt;img&gt;</strong>
+                        Exibe imagens usando o atributo src, que aponta para o arquivo da imagem.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>&lt;audio&gt;</strong>
+                        Reproduz som em arquivos de áudio como wav, mp3 e outros.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>display: flex</strong>
+                        Ativa o Flexbox, permitindo alinhar elementos em linha ou em coluna.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>onclick</strong>
+                        Executa uma ação quando o usuário clica em um elemento.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>addEventListener</strong>
+                        Escuta eventos do navegador, como clique ou pressionamento de tecla.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="slides">
+            <div class="container">
+                <h2 class="section-title">Slides e conteúdos da aula</h2>
+                <p class="section-sub">
+                    Os conteúdos das aulas de HTML e CSS podem ser organizados em blocos temáticos, como mostra abaixo.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span>Slide 1</span>
+                        <div>
+                            <h4>Introdução ao HTML</h4>
+                            <p>Tags, estrutura da página, organização da informação, semântica e primeiros elementos visíveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span>Slide 2</span>
+                        <div>
+                            <h4>CSS e visual</h4>
+                            <p>Como aplicar estilos, mudar cores, largura, altura, margens, alinhamento e aparência geral.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span>Slide 3</span>
+                        <div>
+                            <h4>Flexbox</h4>
+                            <p>Organização dos elementos na página em linha ou coluna, centralização e criação de layouts modernos.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span>Slide 4</span>
+                        <div>
+                            <h4>Componentes visuais</h4>
+                            <p>Uso de divs, imagens, containeres, backgrounds e blocos com diferentes combinações de cor e tamanho.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span>Slide 5</span>
+                        <div>
+                            <h4>Interação com JavaScript</h4>
+                            <p>Reprodução de som, clique, leitura de teclas e resposta do navegador aos comandos do usuário.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Projeto de estudo de HTML, CSS e JavaScript — EEEP Doutor José Iran Costa
+    </footer>
 </body>
 </html>
